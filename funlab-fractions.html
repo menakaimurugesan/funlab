@@ -1,0 +1,787 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fraction FUN Lab · Starts this Navratri</title>
+<meta name="description" content="A small-group fraction workshop for Classes 6–8. Learn a little, play a lot. Take the free Fraction Fitness Check.">
+<meta property="og:title" content="Fraction FUN Lab · Starts this Navratri">
+<meta property="og:description" content="Build a strong fraction foundation before Class 9. Take the free Fraction Fitness Check.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#FFF6DE;color:#173022;font-family:'Nunito','Segoe UI',sans-serif;font-size:18px;line-height:1.5}
+[hidden]{display:none !important}
+#home h1,#home h2,#home h3{font-family:'Baloo 2','Trebuchet MS',sans-serif;line-height:1.08;margin:0}
+#home p{margin:0}
+#home a{color:inherit}
+#home .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+#home .eyebrow{font-size:14px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:#C2410C}
+#home .hero{background:#14532D;color:#FFFFFF;padding:28px 0 40px}
+#home .topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+#home .badge{background:#D9481F;color:#fff;font-size:14px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:8px}
+#home .when{font-size:15px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#FFC83D}
+#home .hero-grid{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;margin-top:28px;flex-wrap:wrap}
+#home .hero-text{flex:999 1 420px;min-width:0;display:flex;flex-direction:column;gap:14px}
+#home .hero h1{font-size:clamp(40px,7vw,68px);font-weight:800}
+#home .hero .sub{font-size:clamp(18px,2.4vw,24px);color:#E3F2E7}
+#home .steps{flex:0 0 auto;display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+#home .stairs{display:flex;align-items:flex-end;gap:6px}
+#home .stairs div{width:50px;border-radius:8px 8px 0 0;display:flex;justify-content:center;padding-top:4px;font-family:'Baloo 2',sans-serif;font-size:21px;font-weight:800}
+#home .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+#home .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:12px 22px;border-radius:999px;font-weight:900;font-size:18px;text-decoration:none;transition:transform .15s ease, box-shadow .15s ease}
+#home .btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.18)}
+#home .btn:focus-visible{outline:3px solid #FFC83D;outline-offset:3px}
+#home .btn-sun{background:#FFC83D;color:#3A2A00}
+#home .btn-white{background:#fff;color:#14532D}
+#home main{padding:28px 0 8px}
+#home main .wrap{display:flex;flex-direction:column;gap:18px}
+#home .card{background:#fff;border-radius:22px;padding:24px 26px;display:flex;flex-direction:column;gap:10px}
+#home .card h2{font-size:clamp(26px,3.6vw,34px);color:#14532D}
+#home .card-head{display:flex;align-items:center;gap:14px}
+#home .card-head svg{flex:none}
+#home .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:18px}
+#home .ticks{list-style:none;margin:4px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
+#home .ticks li{display:flex;gap:12px;align-items:flex-start}
+#home .ticks svg{flex:none;margin-top:3px}
+#home .runs{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+#home .run{border-radius:12px;padding:8px 14px;font-weight:800;font-size:16px}
+#home .run.big{background:#14532D;color:#fff}
+#home .run.small{background:#F3F8F4;color:#4A5D50}
+#home .star{background:#FFC83D;border-radius:22px;padding:20px 26px;display:flex;align-items:center;gap:16px;font-weight:800;font-size:clamp(19px,2.4vw,23px);color:#3A2A00}
+#home .star svg{flex:none}
+#home .plan-head{display:flex;flex-direction:column;gap:6px;margin-top:18px;scroll-margin-top:16px}
+#home .plan-head h2{font-size:clamp(30px,4.4vw,42px);color:#14532D}
+#home .plan-head p{color:#4A5D50}
+#home .plan{display:flex;flex-direction:column;gap:10px}
+#home .topic{background:#fff;border-radius:16px;padding:16px 20px;display:grid;grid-template-columns:260px minmax(0,1fr);gap:8px 22px;align-items:start}
+#home .topic h3{font-size:21px;color:#14532D;font-family:'Nunito',sans-serif;font-weight:900;line-height:1.25}
+#home .q{font-size:16px;margin-top:4px}
+#home .q b{color:#C2410C}
+#home .sessions{display:flex;flex-direction:column;gap:8px;list-style:none;margin:0;padding:0}
+#home .sessions li{display:flex;gap:10px;align-items:flex-start}
+#home .num{flex:none;width:28px;height:28px;border-radius:50%;background:#14532D;color:#fff;font-family:'Baloo 2',sans-serif;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px}
+@media (max-width:640px){#home .topic{grid-template-columns:1fr}
+#home .steps{display:none}
+#home .card{padding:20px}}
+#home .join{background:#14532D;color:#fff;margin-top:28px;padding:32px 0 36px}
+#home .join-grid{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+#home .join h2{font-size:clamp(28px,4vw,38px);color:#FFC83D}
+#home .join p{color:#E3F2E7}
+#home .join .ctas{margin-top:0}
+#home .small{font-size:14px;color:#CDEBD6;margin-top:22px}
+#check{--bg:#EAF5EE; --card:#FFFFFF; --ink:#173022; --muted:#5A6F62; --line:#D3E6D9;
+  --pitch:#14532D; --pitch-2:#1F7A45; --ball:#D9481F; --sun:#FFC83D; --sun-soft:#FFF3CF;
+  --mint:#DDF2E4; --rose:#FDE7DF; --ok:#16843F; --bad:#C2341B;
+  --display:'Baloo 2', 'Trebuchet MS', system-ui, sans-serif; --body:'Nunito', 'Segoe UI', system-ui, sans-serif; min-height:100vh}
+#check{background:var(--bg); color:var(--ink); font-family:var(--body); font-size:17px; line-height:1.5}
+#check .wrap{max-width:620px; margin:0 auto; padding-inline:16px; padding-block:20px 40px; display:flex; flex-direction:column; gap:16px}
+#check .brand{display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap}
+#check .brand b{font-family:var(--display); font-weight:800; font-size:18px; color:var(--pitch)}
+#check .brand span{font-size:14px; font-weight:700; color:var(--muted)}
+#check .card{background:var(--card); border-radius:24px; padding:24px; box-shadow:0 1px 0 var(--line), 0 10px 30px -18px rgba(20,83,45,.35); display:flex; flex-direction:column; gap:18px}
+#check h1{font-family:var(--display); font-weight:800; font-size:clamp(34px,8vw,46px); line-height:1; margin:0; color:var(--pitch); text-wrap:balance}
+#check h2{font-family:var(--display); font-weight:800; font-size:26px; line-height:1.15; margin:0; text-wrap:balance}
+#check p{margin:0}
+#check .lead{font-size:18px; max-width:46ch}
+#check .chips{display:flex; flex-wrap:wrap; gap:8px}
+#check .chip{background:var(--mint); color:var(--pitch); font-weight:800; font-size:14px; border-radius:999px; padding:6px 12px}
+#check .field{display:flex; flex-direction:column; gap:8px}
+#check .field > label,#check .flabel{font-weight:800}
+#check input[type=text]{font:inherit; font-size:22px; font-weight:700; color:var(--ink); background:var(--bg); border:2.5px solid var(--line); border-radius:16px; padding:12px 16px; min-height:58px; width:100%}
+#check input[type=text]::placeholder{color:var(--muted); font-weight:500; font-size:18px}
+#check input[type=text]:focus{outline:none; border-color:var(--sun); box-shadow:0 0 0 4px var(--sun-soft)}
+#check input:disabled,#check button:disabled{opacity:.45; cursor:default}
+#check .pills{display:flex; flex-wrap:wrap; gap:10px}
+#check .pill{font:inherit; font-weight:800; font-size:17px; color:var(--ink); background:var(--bg); border:2.5px solid var(--line); border-radius:999px; padding:10px 20px; min-height:50px; cursor:pointer}
+#check .pill[aria-checked="true"]{background:var(--sun); border-color:var(--sun); color:#3A2A00}
+#check .pill:focus-visible,#check .btn:focus-visible,#check .link:focus-visible,#check .big-choice:focus-visible,#check .conf button:focus-visible{outline:3px solid var(--pitch); outline-offset:3px}
+#check .btn{font-family:var(--display); font-weight:800; font-size:22px; border:0; border-radius:18px; padding:12px 26px; min-height:58px; cursor:pointer; background:var(--ball); color:#FFFFFF; box-shadow:0 5px 0 #9E2F10; transition:transform .08s}
+#check .btn:active{transform:translateY(3px); box-shadow:0 2px 0 #9E2F10}
+#check .imgcard{display:flex; flex-direction:column; gap:10px; background:var(--bg); border-radius:18px; padding:14px}
+#check .imgcard img{width:100%; height:auto; border-radius:12px; border:2px solid var(--line); background:#FFFFFF; -webkit-touch-callout:default}
+#check .note{background:var(--sun-soft); border-radius:18px; padding:14px 16px; display:flex; flex-direction:column; gap:4px}
+#check .note > b{font-family:var(--display); font-size:19px}
+#check .btn.wa{background:#1F8F4E; box-shadow:0 5px 0 #136235; text-decoration:none; display:inline-flex; align-items:center; justify-content:center}
+#check .btn.green{background:var(--pitch-2); box-shadow:0 5px 0 #0F4024}
+#check .btn.ghost{background:transparent; color:var(--pitch); box-shadow:none; border:2.5px solid var(--line); font-size:18px}
+#check .row{display:flex; flex-wrap:wrap; gap:12px; align-items:center}
+#check .row.end{justify-content:space-between}
+#check .err{color:var(--bad); font-weight:800}
+#check .hint{font-size:15px; color:var(--muted)}
+#check .link{font:inherit; font-weight:800; font-size:15px; color:var(--pitch); background:none; border:0; padding:8px 2px; min-height:44px; cursor:pointer; text-decoration:underline; text-underline-offset:3px}
+#check .topbar{display:flex; align-items:center; justify-content:space-between; gap:8px; flex-wrap:wrap}
+#check .who{font-weight:800}
+#check .prog{height:12px; background:var(--line); border-radius:999px; overflow:hidden}
+#check .prog-fill{height:100%; width:0; background:var(--sun); border-radius:999px; transition:width .25s}
+#check .overs{display:flex; flex-wrap:wrap; gap:14px; align-items:center}
+#check .over{display:flex; gap:6px; align-items:center}
+#check .over small{font-size:12px; font-weight:800; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; margin-right:2px}
+#check .dot{width:22px; height:22px; border-radius:50%; border:2.5px solid var(--line); background:var(--card); display:grid; place-items:center; font-size:11px; font-weight:800; color:var(--muted)}
+#check .dot.done{background:var(--pitch-2); border-color:var(--pitch-2); color:#FFFFFF}
+#check .dot.dk{background:var(--line); border-color:var(--line)}
+#check .dot.now{border-color:var(--sun); box-shadow:0 0 0 3px var(--sun-soft)}
+#check .qhead{display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap}
+#check .ballno{font-family:var(--display); font-weight:800; font-size:18px; color:var(--ball)}
+#check .lvl{font-size:13px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:var(--pitch); background:var(--mint); border-radius:999px; padding:4px 10px}
+#check .qtext{font-family:var(--display); font-weight:700; font-size:clamp(24px,5.5vw,30px); line-height:1.3; text-wrap:balance}
+#check .fr{display:inline-flex; flex-direction:column; align-items:center; vertical-align:middle; line-height:1; margin:0 .12em; font-variant-numeric:tabular-nums}
+#check .fr i{font-style:normal; padding:0 .12em}
+#check .fr i:first-child{border-bottom:3px solid currentColor; padding-bottom:2px}
+#check .fr i:last-child{padding-top:3px}
+#check .choices{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px}
+#check .choices.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+#check .big-choice{font-family:var(--display); font-weight:800; font-size:28px; color:var(--ink); background:var(--bg); border:3px solid var(--line); border-radius:20px; min-height:96px; cursor:pointer; padding:10px}
+#check .big-choice[aria-checked="true"]{background:var(--sun-soft); border-color:var(--sun)}
+#check .big-choice.text{font-size:20px; min-height:72px}
+#check .order-slots{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+#check .slot{min-width:72px; min-height:84px; border:3px dashed var(--line); border-radius:16px; display:grid; place-items:center; font-family:var(--display); font-weight:800; font-size:26px}
+#check .slot.filled{border-style:solid; border-color:var(--sun); background:var(--sun-soft)}
+#check .lt{font-family:var(--display); font-weight:800; font-size:24px; color:var(--muted)}
+#check .pair{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px}
+#check .conf{display:flex; flex-direction:column; gap:8px; border-top:2px dashed var(--line); padding-top:14px}
+#check .conf .flabel{font-size:15px; color:var(--muted)}
+#check .conf .opts{display:flex; flex-wrap:wrap; gap:8px}
+#check .conf button{font:inherit; font-weight:800; font-size:15px; color:var(--ink); background:var(--bg); border:2.5px solid var(--line); border-radius:999px; padding:8px 16px; min-height:46px; cursor:pointer}
+#check .conf button[aria-checked="true"]{background:var(--mint); border-color:var(--pitch-2); color:var(--pitch)}
+#check .conf button.dk[aria-checked="true"]{background:var(--rose); border-color:var(--ball); color:var(--ball)}
+#check .scorewrap{display:flex; gap:20px; align-items:center; flex-wrap:wrap}
+#check .ring{width:140px; height:140px; flex:none}
+#check .ring circle{fill:none; stroke-width:14}
+#check .ring .track{stroke:var(--line)}
+#check .ring .val{stroke:var(--pitch-2); stroke-linecap:round; transform:rotate(-90deg); transform-origin:50% 50%; transition:stroke-dashoffset .9s ease-out}
+#check .ring text{font-family:var(--display); font-weight:800; fill:var(--ink)}
+#check .ring text.sub{fill:var(--muted); font-family:var(--body)}
+#check .msg{flex:1 1 220px; min-width:0; display:flex; flex-direction:column; gap:6px}
+#check .msg h2{color:var(--pitch)}
+#check .bars{display:flex; flex-direction:column; gap:10px}
+#check .bar{display:grid; grid-template-columns:minmax(0,130px) minmax(0,1fr) 44px; gap:10px; align-items:center; font-weight:800; font-size:15px}
+#check .bar .track{height:14px; background:var(--line); border-radius:999px; overflow:hidden}
+#check .bar .fill{height:100%; background:var(--sun); border-radius:999px}
+#check .bar .n{text-align:right; font-variant-numeric:tabular-nums}
+#check .balls{display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:8px}
+#check .rb{aspect-ratio:1; border-radius:50%; display:grid; place-items:center; font-weight:800; font-size:16px; border:3px solid var(--line); max-width:56px; width:100%; justify-self:center}
+#check .rb.ok{border-color:var(--ok); color:var(--ok); background:var(--mint)}
+#check .rb.bad{border-color:var(--bad); color:var(--bad); background:var(--rose)}
+#check .rb.dk{border-style:dashed; color:var(--muted)}
+#check .cgrid{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px}
+#check .cbox{background:var(--bg); border-radius:16px; padding:10px 12px}
+#check .cbox small{display:block; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:var(--muted)}
+#check .cbox b{font-family:var(--display); font-size:28px; line-height:1.1}
+#check .send{background:var(--sun-soft); border-radius:18px; padding:16px; display:flex; flex-direction:column; gap:4px}
+#check .send b.t{font-family:var(--display); font-size:20px}
+#check .status{font-weight:700; color:var(--muted)}
+#check textarea{font:inherit; font-size:14px; width:100%; min-height:160px; border:2px solid var(--line); border-radius:12px; padding:10px; background:var(--bg); color:var(--ink)}
+#check .sec-title{font-size:13px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:var(--muted)}
+@media (max-width:480px){#check .card{padding:18px; border-radius:20px}
+#check .cgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+#check .bar{grid-template-columns:minmax(0,1fr) 44px}
+#check .bar .track{grid-column:1 / -1; grid-row:2}
+#check .dot{width:19px; height:19px}
+#check .overs{gap:10px}
+#check .big-choice{font-size:24px}}
+@media (prefers-reduced-motion: reduce){#check .ring .val{transition:none}
+#check .btn{transition:none}}
+#check .back{font-weight:800;color:var(--pitch);text-decoration:underline;text-underline-offset:3px;padding:8px 0;display:inline-block}
+</style>
+</head>
+<body>
+
+<div id="home">
+<header class="hero">
+  <div class="wrap">
+    <div class="topbar">
+      <span class="badge">Fraction FUN Lab</span>
+      <span class="when">Starts this Navratri</span>
+    </div>
+    <div class="hero-grid">
+      <div class="hero-text">
+        <h1>Build a strong fraction foundation before Class 9</h1>
+        <p class="sub">A small-group maths workshop for Classes 6–8. Learn a little, play a lot.</p>
+      </div>
+      <div class="steps" aria-hidden="true">
+        <svg width="42" height="50" viewBox="0 0 48 56" fill="none" style="margin-right:6px">
+          <path d="M24 4 C30 14 32 20 24 30 C16 20 18 14 24 4 Z" fill="#FFC83D"/>
+          <path d="M24 14 C27 19 27 23 24 27 C21 23 21 19 24 14 Z" fill="#D9481F"/>
+          <path d="M4 36 H44 C42 46 34 52 24 52 C14 52 6 46 4 36 Z" fill="#D9481F"/>
+        </svg>
+        <div class="stairs">
+          <div style="height:48px;background:#CDEBD6;color:#14532D">1/4</div>
+          <div style="height:88px;background:#fff;color:#14532D">1/2</div>
+          <div style="height:128px;background:#FFC83D;color:#3A2A00">3/4</div>
+          <div style="height:168px;background:#D9481F;color:#fff">1</div>
+        </div>
+      </div>
+    </div>
+    <div class="ctas">
+      <a class="btn btn-sun" href="#check" data-go="check">Take the free Fraction Fitness Check</a>
+      <a class="btn btn-white" href="#plan" data-go="plan">See the course plan</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <section class="card">
+      <span class="eyebrow">Why it matters</span>
+      <h2>Higher-class maths stands on fractions</h2>
+      <p>Algebra, ratios, percentages, probability, and the formulas in physics and chemistry all use fractions. Without this base, children struggle to follow what is taught in Classes 9–12. The best time to fix it is now, before Class 9.</p>
+    </section>
+
+    <div class="two">
+      <section class="card">
+        <div class="card-head">
+          <svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="#14532D" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M30 6l6 6-18 18-6-6z"/><path d="M12 24l-6 6"/><path d="M8 34l6 6"/><circle cx="36" cy="36" r="5" stroke="#D9481F"/></svg>
+          <span class="eyebrow">Just like cricket</span>
+        </div>
+        <h2>Scoring in maths is like hitting 4s and 6s in cricket</h2>
+        <p>In cricket, 4s and 6s put big runs on the board quickly, while running only singles and doubles is slow and tiring. Maths is the same: with a strong foundation, marks come quickly and easily.</p>
+      </section>
+      <section class="card">
+        <div class="card-head">
+          <svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="#14532D" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 42V10q18-8 36 0v32"/><path d="M6 20h36M6 30h36M15 8v34M24 6v36M33 8v34" stroke-width="1.6"/><path d="M20 42v-9M24 42v-9M28 42v-9" stroke="#D9481F"/></svg>
+          <span class="eyebrow">Net practice</span>
+        </div>
+        <h2>Champions are made in the nets</h2>
+        <p>Great cricketers practise every day, and maths works the same way. Regular practice builds maths muscle. In our workshop we practise playfully, with games, so it never feels like a chore.</p>
+      </section>
+    </div>
+
+    <div class="two">
+      <section class="card">
+        <span class="eyebrow">Hidden gaps</span>
+        <h2>School marks may not show it</h2>
+        <p>Many children don’t even know they are unclear on fractions. Our free <b>Fraction Fitness Check</b> shows whether the foundation is strong. If it shows gaps, your child can join the workshop.</p>
+      </section>
+      <section class="card">
+        <span class="eyebrow">Not tuition</span>
+        <h2>A workshop kids enjoy</h2>
+        <ul class="ticks">
+          <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F7A45" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Learn a little, play a lot</b> with games and hands-on fraction strips</span></li>
+          <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F7A45" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Learn together</b> in a small, friendly group</span></li>
+          <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F7A45" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Confidence grows</b> with every small win</span></li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="star">
+      <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#3A2A00" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg>
+      <p>Master one concept well, and children start wanting to learn the next one too.</p>
+    </div>
+
+    <section id="plan" class="plan-head">
+      <span class="eyebrow">The 6-week course plan</span>
+      <h2>What we learn in each session</h2>
+      <p>18 one-hour sessions. Each topic helps crack a question from the Fraction Fitness Check.</p>
+    </section>
+
+    <div class="plan" id="planList"></div>
+
+  </div>
+</main>
+
+<footer class="join">
+  <div class="wrap">
+    <div class="join-grid">
+      <div>
+        <h2 id="startLine">Classes begin [START DATE]</h2>
+        <p id="detailLine">6 weeks · 18 one-hour sessions · small groups · [LOCATION]</p>
+      </div>
+      <div class="ctas">
+        <a class="btn btn-sun" id="waBtn" href="#">WhatsApp to join</a>
+      </div>
+    </div>
+    <p class="small">Take the Fraction Fitness Check at the start and again at the end, and watch the score grow.</p>
+  </div>
+</footer>
+</div>
+
+<div id="check" hidden>
+<div class="wrap">
+  <div class="brand"><a class="back" href="#home" data-go="home">← Fraction FUN Lab</a><span>Classes 6–8</span></div>
+
+  <section id="s-start" class="card" aria-labelledby="t-start">
+    <h1 id="t-start">Fraction Fitness Check</h1>
+    <p class="lead">Knowing where you stand is the first step to scoring more. Answer honestly — this check is here to help you, not to judge you.</p>
+    <div class="chips"><span class="chip">12 questions</span><span class="chip">Tap or type answers</span><span class="chip">No calculator</span></div>
+    <div class="field">
+      <label for="student-name">What’s your name?</label>
+      <input type="text" id="student-name" autocomplete="given-name" placeholder="Type your name" maxlength="60">
+    </div>
+    <div class="field">
+      <span class="flabel" id="cls-label">Which class are you in? <span class="hint">(optional)</span></span>
+      <div class="pills" role="radiogroup" aria-labelledby="cls-label" id="cls-pills">
+        <button type="button" class="pill" role="radio" aria-checked="false" data-v="Class 6">Class 6</button>
+        <button type="button" class="pill" role="radio" aria-checked="false" data-v="Class 7">Class 7</button>
+        <button type="button" class="pill" role="radio" aria-checked="false" data-v="Class 8">Class 8</button>
+      </div>
+    </div>
+    <p id="start-err" class="err" hidden>Please type your name to start.</p>
+    <p class="hint">Keep paper and a pencil handy for rough work. Type fractions like 3/4 and mixed numbers like 2 3/4.</p>
+    <div class="row"><button class="btn" id="start-btn" type="button">Start</button></div>
+  </section>
+
+  <section id="s-quiz" class="card" hidden>
+    <div class="topbar">
+      <span class="who">Hi, <span id="quiz-student"></span></span>
+      <button class="link" type="button" id="switch-quiz">Switch student</button>
+    </div>
+    <div class="prog" aria-hidden="true"><div class="prog-fill" id="prog-fill"></div></div>
+    <div class="qhead"><span class="ballno" id="ballno"></span><span class="lvl" id="lvl"></span></div>
+    <div class="qtext" id="qtext" aria-live="polite"></div>
+    <div id="qinput"></div>
+    <div class="conf">
+      <span class="flabel" id="conf-label">How sure are you?</span>
+      <div class="opts" role="radiogroup" aria-labelledby="conf-label" id="conf-opts">
+        <button type="button" role="radio" aria-checked="false" data-v="sure">I’m sure</button>
+        <button type="button" role="radio" aria-checked="false" data-v="unsure">Not sure</button>
+        <button type="button" role="radio" aria-checked="false" data-v="dk" class="dk">Don’t know yet</button>
+      </div>
+    </div>
+    <p class="hint" id="blank-note" role="status"></p>
+    <div class="row end">
+      <button class="btn ghost" type="button" id="back-btn">Back</button>
+      <button class="btn green" type="button" id="next-btn">Next</button>
+    </div>
+  </section>
+
+  <section id="s-result" class="card" hidden>
+    <div class="topbar"><span class="who" id="res-name"></span><span class="hint" id="res-time"></span></div>
+    <div class="scorewrap">
+      <svg class="ring" viewBox="0 0 140 140" role="img" id="ring" aria-label="Score">
+        <circle class="track" cx="70" cy="70" r="58"></circle>
+        <circle class="val" id="ring-val" cx="70" cy="70" r="58" stroke-dasharray="364.4" stroke-dashoffset="364.4"></circle>
+        <text x="70" y="74" text-anchor="middle" font-size="46" id="ring-score">0</text>
+        <text x="70" y="100" text-anchor="middle" font-size="15" class="sub">out of 12</text>
+      </svg>
+      <div class="msg"><h2 id="res-title"></h2><p id="res-desc"></p></div>
+    </div>
+    <div class="bars">
+      <div class="bar"><span>Foundations</span><div class="track"><div class="fill" id="b1"></div></div><span class="n" id="n1"></span></div>
+      <div class="bar"><span>Operations</span><div class="track"><div class="fill" id="b2"></div></div><span class="n" id="n2"></span></div>
+      <div class="bar"><span>Applying</span><div class="track"><div class="fill" id="b3"></div></div><span class="n" id="n3"></span></div>
+    </div>
+    <div class="sec-title">Question by question</div>
+    <div class="balls" id="res-balls"></div>
+    <div class="sec-title">How sure you felt</div>
+    <div class="cgrid">
+      <div class="cbox"><small>Sure &amp; right</small><b id="cs1">0</b></div>
+      <div class="cbox"><small>Sure but wrong</small><b id="cs2">0</b></div>
+      <div class="cbox"><small>Not sure</small><b id="cs3">0</b></div>
+      <div class="cbox"><small>Don’t know yet</small><b id="cs4">0</b></div>
+    </div>
+    <div class="row">
+      <button class="btn" type="button" id="dl-btn">Download result</button>
+      <button class="btn ghost" type="button" id="copy-btn">Copy as text</button>
+    </div>
+    <p class="status" id="dl-status" role="status"></p>
+    <div class="imgcard" id="img-card" hidden>
+      <p><b>Didn’t download?</b> Press and hold the result image below, then tap <b>Save to Photos</b>, or <b>Share</b> → <b>WhatsApp</b>.</p>
+      <img id="res-img" alt="Your result card">
+    </div>
+    <div class="row">
+      <button class="btn ghost" type="button" id="again-btn">Try again</button>
+      <button class="btn ghost" type="button" id="switch-res">Switch student</button>
+    </div>
+    <textarea id="copy-fallback" readonly hidden aria-label="Result text"></textarea>
+  </section>
+</div>
+</div>
+
+<script>
+/* ===== Edit these three lines ===== */
+var START_DATE = '[START DATE]';      // e.g. 'Vijayadashami, 20 October'
+var LOCATION = '[LOCATION]';          // e.g. 'Anna Nagar, Chennai'
+var WHATSAPP = '';                    // e.g. '919876543210' (country code, no + or spaces)
+/* ================================== */
+
+document.getElementById('startLine').textContent = 'Classes begin ' + START_DATE;
+document.getElementById('detailLine').textContent = '6 weeks · 18 one-hour sessions · small groups · ' + LOCATION;
+var wa = document.getElementById('waBtn');
+if (WHATSAPP) {
+  wa.href = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent('Hi! I would like to join the Fraction FUN Lab.');
+  wa.target = '_blank'; wa.rel = 'noopener';
+} else {
+  wa.textContent = 'WhatsApp: [YOUR NUMBER]';
+  wa.removeAttribute('href');
+}
+
+var PLAN = [
+  ['What a fraction is', [['Q1','Which is bigger: 1/6 or 1/4?']], [
+    [1,'What a fraction means: equal parts, the top and bottom numbers'],
+    [2,'Compare unit fractions and place fractions on a number line']]],
+  ['Equivalent fractions', [['Q2','3/4 = ?/20'],['Q3','Simplify 12/16']], [
+    [3,'Find equivalent fractions with strips, then by multiplying'],
+    [4,'Simplify fractions to their simplest form']]],
+  ['Comparing and ordering', [['Q4','Order 2/3, 3/5, 1/2']], [
+    [5,'Compare fractions with the same top or bottom, and against ½'],
+    [6,'Order unlike fractions using a common denominator']]],
+  ['Mixed numbers', [['Q5','Write 11/4 as a mixed number']], [
+    [7,'Convert between improper fractions and mixed numbers']]],
+  ['Adding and subtracting', [['Q6','2/7 + 3/7'],['Q7','3/4 − 1/3']], [
+    [8,'Add and subtract fractions with the same denominator'],
+    [9,'Add and subtract unlike fractions using the LCM'],
+    [10,'Add and subtract mixed numbers in word problems']]],
+  ['Multiplying', [['Q8','What is 2/5 of 45?']], [
+    [11,'“Of” means multiply: find a fraction of a quantity'],
+    [12,'Multiply a fraction by a whole number and by a fraction']]],
+  ['Dividing', [['Q9','1/2 ÷ 1/4']], [
+    [13,'Understand division: how many quarters fit in a half?'],
+    [14,'Divide fractions using the reciprocal']]],
+  ['Decimals and percentages', [['Q10','0.75 as a fraction and a percentage']], [
+    [15,'Convert between fractions and decimals'],
+    [16,'Convert fractions to percentages: marks and discounts']]],
+  ['Word problems and sense-checking', [['Q11','The water-tank problem'],['Q12','Is 5/6 + 4/5 more or less than 1?']], [
+    [17,'Solve multi-step word problems with bar models'],
+    [18,'Estimate to check answers, then retake the Fitness Check']]]
+];
+(function(){
+  function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
+  var list = document.getElementById('planList');
+  PLAN.forEach(function(t){
+    var box = el('div','topic'), left = el('div');
+    left.appendChild(el('h3',null,t[0]));
+    t[1].forEach(function(q){ var p=el('p','q'); p.appendChild(el('b',null,q[0])); p.appendChild(document.createTextNode('  '+q[1])); left.appendChild(p); });
+    var ul = el('ul','sessions');
+    t[2].forEach(function(s){ var li=el('li'); li.appendChild(el('span','num',String(s[0]))); li.appendChild(el('span',null,s[1])); ul.appendChild(li); });
+    box.appendChild(left); box.appendChild(ul); list.appendChild(box);
+  });
+})();
+</script>
+
+<script>
+
+(function(){
+  const $ = id => document.getElementById(id);
+  const KEY = 'ffc-attempts-v2';
+  const F = (a,b) => '<span class="fr" aria-label="'+a+' over '+b+'"><i>'+a+'</i><i>'+b+'</i></span>';
+
+  const norm = s => (s||'').toString().toLowerCase().replace(/[−–—]/g,'-').replace(/\s+/g,' ').trim();
+  const frac = s => norm(s).replace(/\s*\/\s*/g,'/').replace(/\s/g,'');
+  const num = s => norm(s).replace(/litres?|liters?|ltrs?|l\b|%|percent/g,'').replace(/\s/g,'');
+  const mixed = s => norm(s).replace('¾',' 3/4').replace(/\s*\/\s*/g,'/').replace(/-/g,' ').replace(/\s+/g,' ').trim() === '2 3/4';
+
+  const Q = [
+    {n:1, level:1, text:'Which is bigger?', type:'choice', opts:[['1/6',F(1,6)],['1/4',F(1,4)]], ok:v=>v==='1/4'},
+    {n:2, level:1, text:'Fill in the blank: '+F(3,4)+' = '+F('?',20), type:'text', ph:'Type the missing number', mode:'numeric', ok:v=>num(v)==='15'},
+    {n:3, level:1, text:'Simplify '+F(12,16), type:'text', ph:'e.g. 1/2', ok:v=>frac(v)==='3/4'},
+    {n:4, level:1, text:'Tap the fractions from smallest to largest.', type:'order', opts:['2/3','3/5','1/2'], ok:v=>v==='1/2,3/5,2/3'},
+    {n:5, level:2, text:'Write '+F(11,4)+' as a mixed number.', type:'text', ph:'e.g. 1 2/3', ok:mixed},
+    {n:6, level:2, text:F(2,7)+' + '+F(3,7)+' = ?', type:'text', ph:'e.g. 1/2', ok:v=>frac(v)==='5/7'},
+    {n:7, level:2, text:F(3,4)+' − '+F(1,3)+' = ?', type:'text', ph:'e.g. 1/2', ok:v=>frac(v)==='5/12'},
+    {n:8, level:2, text:'What is '+F(2,5)+' of 45?', type:'text', ph:'Type a number', mode:'numeric', ok:v=>num(v)==='18'},
+    {n:9, level:3, text:F(1,2)+' ÷ '+F(1,4)+' = ?', type:'text', ph:'Type your answer', ok:v=>num(v)==='2'||frac(v)==='2/1'},
+    {n:10, level:3, text:'Write 0.75 as a fraction and as a percentage.', type:'pair', labels:['Fraction (simplest form)','Percentage'], phs:['e.g. 1/2','e.g. 50'], ok:v=>{const p=v.split('|'); return frac(p[0])==='3/4' && num(p[1]||'')==='75';}},
+    {n:11, level:3, text:'A tank is '+F(3,8)+' full. After adding 20 litres, it is '+F(5,8)+' full. How many litres does the full tank hold?', type:'text', ph:'Litres', mode:'numeric', ok:v=>num(v)==='80'},
+    {n:12, level:3, text:'Without calculating: is '+F(5,6)+' + '+F(4,5)+' more than 1 or less than 1?', type:'choice', textOpts:true, opts:[['more','More than 1'],['less','Less than 1']], ok:v=>v==='more'},
+  ];
+  const LEVEL = {1:'Level 1 · Foundations', 2:'Level 2 · Operations', 3:'Level 3 · Applying'};
+
+  function loadAll(){ try{ return JSON.parse(localStorage.getItem(KEY)||'{}')||{}; }catch(e){ return {}; } }
+  function saveAll(o){ try{ localStorage.setItem(KEY, JSON.stringify(o)); }catch(e){} }
+  const memory = {};
+  function pushAttempt(k, a){ const all = loadAll(); const list = (all[k] || memory[k] || []).concat([a]); all[k] = list; memory[k] = list; saveAll(all); return list; }
+
+  let student = {name:'', cls:'', key:''}, startedAt = 0, idx = 0, answers = {}, confs = {}, lastAttempt = null, lastList = [], finishConfirm = false;
+  const fresh = () => { answers = {}; confs = {}; idx = 0; finishConfirm = false; };
+
+  $('cls-pills').addEventListener('click', e => {
+    const b = e.target.closest('.pill'); if(!b) return;
+    const on = b.getAttribute('aria-checked') !== 'true';
+    document.querySelectorAll('#cls-pills .pill').forEach(p => p.setAttribute('aria-checked','false'));
+    if(on) b.setAttribute('aria-checked','true');
+  });
+  const chosenClass = () => { const b = document.querySelector('#cls-pills .pill[aria-checked="true"]'); return b ? b.dataset.v : ''; };
+
+  $('start-btn').addEventListener('click', () => {
+    const name = $('student-name').value.trim();
+    if(!name){ $('start-err').hidden = false; $('student-name').focus(); return; }
+    $('start-err').hidden = true;
+    student = {name, cls:chosenClass(), key:name.toLowerCase().replace(/\s+/g,' ')};
+    $('quiz-student').textContent = name + (student.cls ? ' · ' + student.cls : '');
+    fresh(); startedAt = Date.now();
+    show('s-quiz'); renderQ();
+  });
+  $('student-name').addEventListener('keydown', e => { if(e.key === 'Enter') $('start-btn').click(); });
+
+  function show(id){ ['s-start','s-quiz','s-result'].forEach(s => $(s).hidden = s !== id); window.scrollTo({top:0}); }
+  window.ffcShowStart = () => { if($('s-quiz').hidden && $('s-result').hidden) show('s-start'); };
+
+  function hasAnswer(q){ const v = answers[q.n]; if(!v) return false; if(q.type==='pair') return v.split('|').some(x=>x.trim()); if(q.type==='order') return v.split(',').length===3; return !!norm(v); }
+
+  function renderOvers(){
+    const done = Q.filter(q => confs[q.n]==='dk' || hasAnswer(q)).length;
+    $('prog-fill').style.width = (done/12*100) + '%';
+  }
+
+  function renderQ(){
+    const q = Q[idx], dk = confs[q.n]==='dk';
+    $('ballno').textContent = 'Question ' + (idx+1) + ' of 12';
+    $('lvl').textContent = LEVEL[q.level];
+    $('qtext').innerHTML = q.text;
+    const box = $('qinput'); box.innerHTML = '';
+    if(q.type==='text'){
+      const i = document.createElement('input'); i.type='text'; i.id='ans-'+q.n; i.autocomplete='off'; i.placeholder=q.ph||''; if(q.mode) i.inputMode=q.mode;
+      i.setAttribute('aria-label','Your answer'); i.value = answers[q.n]||''; i.disabled = dk;
+      i.addEventListener('input', () => { answers[q.n] = i.value; renderOvers(); });
+      i.addEventListener('keydown', e => { if(e.key==='Enter') $('next-btn').click(); });
+      box.appendChild(i);
+    } else if(q.type==='choice'){
+      const g = document.createElement('div'); g.className='choices'; g.setAttribute('role','radiogroup'); g.setAttribute('aria-label','Choose one');
+      q.opts.forEach(([v,label]) => {
+        const b = document.createElement('button'); b.type='button'; b.className='big-choice'+(q.textOpts?' text':''); b.setAttribute('role','radio');
+        b.setAttribute('aria-checked', answers[q.n]===v ? 'true':'false'); b.innerHTML = label; b.disabled = dk;
+        b.addEventListener('click', () => { answers[q.n] = v; g.querySelectorAll('.big-choice').forEach(x=>x.setAttribute('aria-checked', x===b?'true':'false')); renderOvers(); });
+        g.appendChild(b);
+      });
+      box.appendChild(g);
+    } else if(q.type==='order'){
+      const picked = answers[q.n] ? answers[q.n].split(',') : [];
+      const slots = document.createElement('div'); slots.className='order-slots'; slots.setAttribute('aria-label','Your order: '+(picked.join(', ')||'empty'));
+      for(let k=0;k<3;k++){
+        if(k){ const lt = document.createElement('span'); lt.className='lt'; lt.textContent='<'; slots.appendChild(lt); }
+        const s = document.createElement('div'); s.className='slot'+(picked[k]?' filled':'');
+        s.innerHTML = picked[k] ? F(...picked[k].split('/')) : ''; slots.appendChild(s);
+      }
+      const g = document.createElement('div'); g.className='choices three'; g.style.marginTop='12px';
+      q.opts.forEach(v => {
+        const b = document.createElement('button'); b.type='button'; b.className='big-choice'; b.innerHTML = F(...v.split('/'));
+        b.disabled = dk || picked.includes(v); b.setAttribute('aria-label','Add '+v);
+        b.addEventListener('click', () => { const p = answers[q.n] ? answers[q.n].split(',') : []; if(p.length<3 && !p.includes(v)){ p.push(v); answers[q.n] = p.join(','); renderQ(); } });
+        g.appendChild(b);
+      });
+      const clr = document.createElement('button'); clr.type='button'; clr.className='link'; clr.textContent='Start again'; clr.disabled = dk;
+      clr.addEventListener('click', () => { answers[q.n] = ''; renderQ(); });
+      box.appendChild(slots); box.appendChild(g); box.appendChild(clr);
+    } else if(q.type==='pair'){
+      const vals = (answers[q.n]||'|').split('|');
+      const g = document.createElement('div'); g.className='pair';
+      q.labels.forEach((lab,k) => {
+        const f = document.createElement('div'); f.className='field';
+        const l = document.createElement('label'); l.htmlFor='ans-'+q.n+'-'+k; l.textContent=lab; l.className='hint'; l.style.fontWeight='800';
+        const i = document.createElement('input'); i.type='text'; i.id='ans-'+q.n+'-'+k; i.autocomplete='off'; i.placeholder=q.phs[k]; i.value=vals[k]||''; i.disabled = dk; if(k===1) i.inputMode='decimal';
+        i.addEventListener('input', () => { const cur=(answers[q.n]||'|').split('|'); cur[k]=i.value; answers[q.n]=cur.join('|'); renderOvers(); });
+        f.appendChild(l); f.appendChild(i); g.appendChild(f);
+      });
+      box.appendChild(g);
+    }
+    document.querySelectorAll('#conf-opts button').forEach(b => b.setAttribute('aria-checked', confs[q.n]===b.dataset.v ? 'true':'false'));
+    $('back-btn').style.visibility = idx===0 ? 'hidden' : 'visible';
+    $('next-btn').textContent = idx===11 ? 'Finish' : 'Next';
+    $('blank-note').textContent = '';
+    renderOvers();
+  }
+
+  $('conf-opts').addEventListener('click', e => {
+    const b = e.target.closest('button'); if(!b) return;
+    const q = Q[idx], v = b.dataset.v;
+    confs[q.n] = confs[q.n]===v ? '' : v;
+    if(confs[q.n]==='dk') answers[q.n] = '';
+    renderQ();
+  });
+
+  $('back-btn').addEventListener('click', () => { if(idx>0){ idx--; finishConfirm=false; renderQ(); } });
+  $('next-btn').addEventListener('click', () => {
+    if(idx<11){ idx++; renderQ(); return; }
+    const blanks = Q.filter(q => confs[q.n]!=='dk' && !hasAnswer(q)).length;
+    if(blanks && !finishConfirm){ finishConfirm = true; $('blank-note').textContent = blanks + (blanks===1?' question has':' questions have') + ' no answer yet. Tap Finish again to see your result, or go Back to answer.'; return; }
+    finish();
+  });
+
+  function finish(){
+    const secs = Math.max(1, Math.round((Date.now()-startedAt)/1000));
+    const marks = Q.map(q => { const c = confs[q.n]||''; const dk = c==='dk'; const v = answers[q.n]||''; return {n:q.n, level:q.level, conf:c, dk, ok:!dk && hasAnswer(q) && !!q.ok(v), blank:!dk && !hasAnswer(q)}; });
+    const score = marks.filter(m=>m.ok).length;
+    const lv = [1,2,3].map(L => marks.filter(m=>m.level===L && m.ok).length);
+    const cs = {sureOk:marks.filter(m=>m.conf==='sure'&&m.ok).map(m=>m.n), sureWrong:marks.filter(m=>m.conf==='sure'&&!m.ok).map(m=>m.n), unsure:marks.filter(m=>m.conf==='unsure').map(m=>m.n), dk:marks.filter(m=>m.dk).map(m=>m.n)};
+    lastAttempt = {at:new Date().toISOString(), secs, score, lv, wrong:marks.filter(m=>!m.ok).map(m=>m.n), blanks:marks.filter(m=>m.blank).length, cs, cls:student.cls};
+    lastList = pushAttempt(student.key, lastAttempt);
+    showResult(marks);
+  }
+
+  const fmtTime = s => { const m = Math.floor(s/60), r = s%60; return m ? (m+' min '+String(r).padStart(2,'0')+' s') : (r+' s'); };
+  const fmtDate = iso => { const d = new Date(iso); return d.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'})+', '+d.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'}); };
+
+  function verdictFor(a){
+    if(a.lv[0] < 4) return {warn:true, t:'Good job on your self-check!', d:'By checking where you stand, you’ve already taken the first step towards success. A little practice on a few key ideas will make fractions click, and make Class 9 maths much easier. Fraction Lab can help.'};
+    if(a.score >= 11) return {warn:false, t:'Great going!', d:'A strong fraction foundation. You’re ready for higher classes.'};
+    if(a.score >= 8) return {warn:true, t:'Good base, a few skills to sharpen', d:'The basics are in place. A little practice with operations or word problems will take you further. Fraction Lab can help.'};
+    return {warn:true, t:'Ready to grow', d:'Some ideas need more practice. That’s normal at this stage, and Fraction Lab is built to help you feel confident with fractions.'};
+  }
+
+  function showResult(marks){
+    const a = lastAttempt, v = verdictFor(a);
+    $('res-name').textContent = student.name + (student.cls ? ' · ' + student.cls : '');
+    $('res-time').textContent = 'Time taken: ' + fmtTime(a.secs);
+    $('ring-score').textContent = a.score; $('ring').setAttribute('aria-label','Score '+a.score+' out of 12');
+    $('ring-val').setAttribute('stroke-dashoffset','364.4');
+    $('res-title').textContent = v.t; $('res-desc').textContent = v.d;
+    [1,2,3].forEach(L => { $('b'+L).style.width = (a.lv[L-1]/4*100)+'%'; $('n'+L).textContent = a.lv[L-1]+'/4'; });
+    const box = $('res-balls'); box.innerHTML = '';
+    marks.forEach(m => { const d = document.createElement('div'); d.className = 'rb ' + (m.dk?'dk':(m.ok?'ok':'bad')); d.textContent = m.dk ? '?' : (m.ok ? '✓' : '✗'); d.title = 'Question '+m.n; d.setAttribute('aria-label','Question '+m.n+(m.dk?' don’t know yet':(m.ok?' right':' not right'))); box.appendChild(d); });
+    $('cs1').textContent = a.cs.sureOk.length; $('cs2').textContent = a.cs.sureWrong.length; $('cs3').textContent = a.cs.unsure.length; $('cs4').textContent = a.cs.dk.length;
+    $('dl-status').textContent = ''; $('copy-fallback').hidden = true; $('img-card').hidden = true;
+    show('s-result');
+    preparePNG();
+    requestAnimationFrame(() => requestAnimationFrame(() => $('ring-val').setAttribute('stroke-dashoffset', String(364.4*(1-a.score/12)))));
+  }
+
+  $('again-btn').addEventListener('click', () => { fresh(); startedAt = Date.now(); show('s-quiz'); renderQ(); });
+  function switchStudent(){
+    fresh(); lastAttempt = null; lastList = [];
+    $('student-name').value = ''; document.querySelectorAll('#cls-pills .pill').forEach(p => p.setAttribute('aria-checked','false'));
+    $('start-err').hidden = true; show('s-start'); $('student-name').focus({preventScroll:true});
+  }
+  $('switch-quiz').addEventListener('click', switchStudent);
+  $('switch-res').addEventListener('click', switchStudent);
+
+  const qs = arr => arr.length ? arr.map(n=>'Q'+n).join(', ') : 'none';
+  function resultText(){
+    const a = lastAttempt, v = verdictFor(a);
+    const lines = [
+      'FRACTION FUN LAB — Fraction Fitness Check',
+      'Student: ' + student.name + (student.cls ? ' ('+student.cls+')' : ''),
+      '',
+      'LATEST ATTEMPT (' + fmtDate(a.at) + ')',
+      'Score: ' + a.score + '/12  |  Foundations '+a.lv[0]+'/4, Operations '+a.lv[1]+'/4, Applying '+a.lv[2]+'/4',
+      'Time taken: ' + fmtTime(a.secs),
+      'To practise: ' + qs(a.wrong) + (a.blanks ? '  ('+a.blanks+' left blank)' : ''),
+      'Result: ' + v.t,
+      'Sure & right: ' + qs(a.cs.sureOk) + '  |  Sure but wrong: ' + qs(a.cs.sureWrong) + '  |  Not sure: ' + qs(a.cs.unsure) + '  |  Don’t know yet: ' + qs(a.cs.dk),
+      '',
+      'ALL ATTEMPTS ON THIS DEVICE: ' + lastList.length,
+    ];
+    lastList.forEach((x,i) => lines.push('  #'+(i+1)+'  '+fmtDate(x.at)+'  |  time '+fmtTime(x.secs)+'  |  score '+x.score+'/12'));
+    return lines.join('\n');
+  }
+
+  async function resultPNG(){
+    try{ await document.fonts.ready; }catch(e){}
+    const a = lastAttempt, v = verdictFor(a), W = 1080, pad = 64, rows = lastList.length, H = 1130 + rows*58;
+    const c = document.createElement('canvas'); c.width = W; c.height = H; const g = c.getContext('2d');
+    const D = "'Baloo 2', 'Trebuchet MS', sans-serif", B = "'Nunito', 'Segoe UI', sans-serif";
+    g.fillStyle = '#FFFFFF'; g.fillRect(0,0,W,H);
+    g.fillStyle = '#14532D'; g.fillRect(0,0,W,210);
+    g.fillStyle = '#CDEBD6'; g.font = '800 26px '+B; g.fillText('FRACTION FUN LAB · FITNESS CHECK RESULT', pad, 68);
+    g.fillStyle = '#FFFFFF'; g.font = '800 64px '+D; g.fillText(student.name.slice(0,26), pad, 155);
+    if(student.cls){ g.font = '800 30px '+B; g.fillStyle='#FFC83D'; g.textAlign='right'; g.fillText(student.cls, W-pad, 155); g.textAlign='left'; }
+    let y = 270;
+    g.fillStyle = '#55615A'; g.font = '800 22px '+B; g.fillText('LATEST ATTEMPT · ' + fmtDate(a.at).toUpperCase(), pad, y);
+    y += 110;
+    g.fillStyle = '#14532D'; g.font = '800 120px '+D; g.fillText(String(a.score), pad, y);
+    const sw = g.measureText(String(a.score)).width;
+    g.fillStyle = '#55615A'; g.font = '700 36px '+B; g.fillText('out of 12 · time ' + fmtTime(a.secs), pad + sw + 20, y);
+    y += 40;
+    g.fillStyle = v.warn ? '#FFF3CF' : '#DDF2E4'; g.fillRect(pad, y, W-2*pad, 72);
+    g.fillStyle = '#14532D'; g.font = '800 36px '+D; g.fillText(v.t, pad+24, y+50);
+    y += 120;
+    const cw = (W-2*pad-40)/3, names = ['FOUNDATIONS','OPERATIONS','APPLYING'];
+    for(let i=0;i<3;i++){
+      const x = pad + i*(cw+20);
+      g.strokeStyle = '#D3E6D9'; g.lineWidth = 3; g.strokeRect(x, y, cw, 110);
+      g.fillStyle = '#55615A'; g.font = '800 22px '+B; g.fillText(names[i], x+18, y+38);
+      g.fillStyle = '#173022'; g.font = '800 46px '+D; g.fillText(a.lv[i]+'/4', x+18, y+92);
+    }
+    y += 170;
+    g.fillStyle = '#173022'; g.font = '800 30px '+B;
+    { const words = ('To practise: ' + (a.wrong.length ? a.wrong.map(n=>'Q'+n).join(', ') : 'none') + (a.blanks ? '  ('+a.blanks+' left blank)' : '')).split(' ');
+      let line = '';
+      words.forEach(w => { const t = line ? line + ' ' + w : w; if(g.measureText(t).width > W-2*pad && line){ g.fillText(line, pad, y); y += 40; line = w; } else line = t; });
+      g.fillText(line, pad, y); }
+    y += 60;
+    g.fillStyle = '#55615A'; g.font = '800 22px '+B; g.fillText('HOW SURE THEY FELT', pad, y); y += 6;
+    [['Sure & right', a.cs.sureOk, '#16843F'], ['Sure but wrong', a.cs.sureWrong, '#C2341B'], ['Not sure', a.cs.unsure, '#9A5B00'], ['Don’t know yet', a.cs.dk, '#55615A']].forEach(([label, arr, col]) => {
+      y += 42; g.fillStyle = col; g.font = '800 27px '+B; g.fillText(label + ' (' + arr.length + ')', pad, y);
+      g.fillStyle = '#173022'; g.font = '600 27px '+B; g.fillText(arr.length ? arr.map(n=>'Q'+n).join(', ') : '—', pad+340, y);
+    });
+    y += 76;
+    g.fillStyle = '#14532D'; g.font = '800 34px '+D; g.fillText('All attempts: ' + rows, pad, y);
+    y += 18; g.fillStyle = '#14532D'; g.fillRect(pad, y, W-2*pad, 3); y += 44;
+    g.font = '800 22px '+B; g.fillStyle = '#55615A';
+    g.fillText('#', pad, y); g.fillText('DATE & TIME', pad+60, y); g.fillText('TIME TAKEN', pad+520, y); g.textAlign='right'; g.fillText('SCORE', W-pad, y); g.textAlign='left';
+    y += 14;
+    lastList.forEach((x,i) => {
+      y += 50; g.fillStyle = i===rows-1 ? '#D9481F' : '#173022'; g.font = (i===rows-1?'800 ':'600 ')+'28px '+B;
+      g.fillText(String(i+1), pad, y); g.fillText(fmtDate(x.at), pad+60, y); g.fillText(fmtTime(x.secs), pad+520, y);
+      g.textAlign='right'; g.fillText(x.score+'/12', W-pad, y); g.textAlign='left';
+      g.fillStyle = '#E3EEE6'; g.fillRect(pad, y+16, W-2*pad, 1);
+    });
+    return await new Promise(r => c.toBlob(r, 'image/png'));
+  }
+
+
+  let pngBlob = null, pngURL = null, pngJob = null;
+  function preparePNG(){
+    pngBlob = null;
+    pngJob = resultPNG().then(b => {
+      pngBlob = b;
+      if(pngURL){ try{ URL.revokeObjectURL(pngURL); }catch(e){} }
+      pngURL = URL.createObjectURL(b); $('res-img').src = pngURL;
+      return b;
+    }).catch(() => null);
+    return pngJob;
+  }
+  const fileName = () => 'Fraction-check-' + (student.name.replace(/[^A-Za-z0-9]+/g,'-').replace(/^-|-$/g,'') || 'student') + '.png';
+
+  $('dl-btn').addEventListener('click', async () => {
+    const status = $('dl-status');
+    $('img-card').hidden = false;   // always offer the press-and-hold fallback
+    const blob = pngBlob || await (pngJob || preparePNG());
+    if(!blob){ status.textContent = 'Couldn’t make the image here. Tap "Copy as text" and paste it into WhatsApp instead.'; return; }
+    let file = null;
+    try{ file = new File([blob], fileName(), {type:'image/png'}); }catch(e){}
+    const touch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+    if(touch && file && navigator.canShare && navigator.canShare({files:[file]})){
+      try{
+        await navigator.share({files:[file], title:'Fraction Fitness Check result'});
+        status.textContent = 'Done! Choose “Save Image” to keep it, or WhatsApp to send it.';
+        return;
+      }catch(err){
+        if(err && err.name === 'AbortError'){ status.textContent = 'No problem. You can also press and hold the image below to save it.'; return; }
+      }
+    }
+    try{
+      const a = document.createElement('a'); a.href = pngURL; a.download = fileName();
+      document.body.appendChild(a); a.click(); a.remove();
+      status.textContent = 'Saved! Look in your Downloads. If you can’t find it, press and hold the image below.';
+    }catch(e){
+      status.textContent = 'Press and hold the result image below to save it or share it on WhatsApp.';
+    }
+  });
+
+  $('copy-btn').addEventListener('click', async () => {
+    const text = resultText(), status = $('dl-status');
+    try{ await navigator.clipboard.writeText(text); status.textContent = 'Copied! Paste it into WhatsApp and send it to us.'; }
+    catch(e){ const ta = $('copy-fallback'); ta.value = text; ta.hidden = false; ta.focus(); ta.select(); status.textContent = 'Select the text below, copy it, and paste it into WhatsApp.'; }
+  });
+})();
+
+</script>
+
+<script>
+/* Two views on one page: the announcement (home) and the Fitness Check (check).
+   Buttons switch views directly, so it works even where links with # are blocked. */
+(function(){
+  var home = document.getElementById('home'), check = document.getElementById('check');
+  function go(view, push){
+    if (view === 'plan') { home.hidden = false; check.hidden = true; document.getElementById('plan').scrollIntoView({behavior:'smooth'}); return; }
+    var isCheck = view === 'check';
+    home.hidden = isCheck; check.hidden = !isCheck;
+    if (isCheck && window.ffcShowStart) window.ffcShowStart();
+    window.scrollTo(0, 0);
+    if (push) { try { history.pushState({view:view}, '', isCheck ? '#check' : location.pathname + location.search); } catch(e){} }
+  }
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('[data-go]'); if (!a) return;
+    e.preventDefault(); go(a.getAttribute('data-go'), true);
+  });
+  window.addEventListener('popstate', function(){ go(location.hash === '#check' ? 'check' : 'home', false); });
+  window.addEventListener('hashchange', function(){ go(location.hash === '#check' ? 'check' : 'home', false); });
+  if (location.hash === '#check') go('check', false);
+})();
+</script>
+</body>
+</html>
