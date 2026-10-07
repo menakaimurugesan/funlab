@@ -44,6 +44,8 @@ input:disabled, button:disabled{opacity:.45; cursor:default}
 .pill:focus-visible, .btn:focus-visible, .link:focus-visible, .big-choice:focus-visible, .conf button:focus-visible{outline:3px solid var(--pitch); outline-offset:3px}
 .btn{font-family:var(--display); font-weight:800; font-size:22px; border:0; border-radius:18px; padding:12px 26px; min-height:58px; cursor:pointer; background:var(--ball); color:#FFFFFF; box-shadow:0 5px 0 #9E2F10; transition:transform .08s}
 .btn:active{transform:translateY(3px); box-shadow:0 2px 0 #9E2F10}
+.imgcard{display:flex; flex-direction:column; gap:10px; background:var(--bg); border-radius:18px; padding:14px}
+.imgcard img{width:100%; height:auto; border-radius:12px; border:2px solid var(--line); background:#FFFFFF; -webkit-touch-callout:default}
 .note{background:var(--sun-soft); border-radius:18px; padding:14px 16px; display:flex; flex-direction:column; gap:4px}
 .note > b{font-family:var(--display); font-size:19px}
 .btn.wa{background:#1F8F4E; box-shadow:0 5px 0 #136235; text-decoration:none; display:inline-flex; align-items:center; justify-content:center}
@@ -202,11 +204,15 @@ textarea{font:inherit; font-size:14px; width:100%; min-height:160px; border:2px 
       <button class="btn" type="button" id="dl-btn">Download result</button>
       <button class="btn ghost" type="button" id="copy-btn">Copy as text</button>
     </div>
+    <p class="status" id="dl-status" role="status"></p>
+    <div class="imgcard" id="img-card" hidden>
+      <p><b>Didn’t download?</b> Press and hold the result image below, then tap <b>Save to Photos</b>, or <b>Share</b> → <b>WhatsApp</b>.</p>
+      <img id="res-img" alt="Your result card">
+    </div>
     <div class="row">
       <button class="btn ghost" type="button" id="again-btn">Try again</button>
       <button class="btn ghost" type="button" id="switch-res">Switch student</button>
     </div>
-    <p class="status" id="dl-status" role="status"></p>
     <textarea id="copy-fallback" readonly hidden aria-label="Result text"></textarea>
   </section>
 </div>
@@ -380,8 +386,9 @@ textarea{font:inherit; font-size:14px; width:100%; min-height:160px; border:2px 
     const box = $('res-balls'); box.innerHTML = '';
     marks.forEach(m => { const d = document.createElement('div'); d.className = 'rb ' + (m.dk?'dk':(m.ok?'ok':'bad')); d.textContent = m.dk ? '?' : (m.ok ? '✓' : '✗'); d.title = 'Question '+m.n; d.setAttribute('aria-label','Question '+m.n+(m.dk?' don’t know yet':(m.ok?' right':' not right'))); box.appendChild(d); });
     $('cs1').textContent = a.cs.sureOk.length; $('cs2').textContent = a.cs.sureWrong.length; $('cs3').textContent = a.cs.unsure.length; $('cs4').textContent = a.cs.dk.length;
-    $('dl-status').textContent = ''; $('copy-fallback').hidden = true;
+    $('dl-status').textContent = ''; $('copy-fallback').hidden = true; $('img-card').hidden = true;
     show('s-result');
+    preparePNG();
     requestAnimationFrame(() => requestAnimationFrame(() => $('ring-val').setAttribute('stroke-dashoffset', String(364.4*(1-a.score/12)))));
   }
 
@@ -416,7 +423,7 @@ textarea{font:inherit; font-size:14px; width:100%; min-height:160px; border:2px 
 
   async function resultPNG(){
     try{ await document.fonts.ready; }catch(e){}
-    const a = lastAttempt, v = verdictFor(a), W = 1080, pad = 64, rows = lastList.length, H = 1080 + rows*58;
+    const a = lastAttempt, v = verdictFor(a), W = 1080, pad = 64, rows = lastList.length, H = 1130 + rows*58;
     const c = document.createElement('canvas'); c.width = W; c.height = H; const g = c.getContext('2d');
     const D = "'Baloo 2', 'Trebuchet MS', sans-serif", B = "'Nunito', 'Segoe UI', sans-serif";
     g.fillStyle = '#FFFFFF'; g.fillRect(0,0,W,H);
@@ -442,7 +449,11 @@ textarea{font:inherit; font-size:14px; width:100%; min-height:160px; border:2px 
       g.fillStyle = '#173022'; g.font = '800 46px '+D; g.fillText(a.lv[i]+'/4', x+18, y+92);
     }
     y += 170;
-    g.fillStyle = '#173022'; g.font = '800 30px '+B; g.fillText('To practise: ' + (a.wrong.length ? a.wrong.map(n=>'Q'+n).join(', ') : 'none') + (a.blanks ? '  ('+a.blanks+' blank)' : ''), pad, y);
+    g.fillStyle = '#173022'; g.font = '800 30px '+B;
+    { const words = ('To practise: ' + (a.wrong.length ? a.wrong.map(n=>'Q'+n).join(', ') : 'none') + (a.blanks ? '  ('+a.blanks+' left blank)' : '')).split(' ');
+      let line = '';
+      words.forEach(w => { const t = line ? line + ' ' + w : w; if(g.measureText(t).width > W-2*pad && line){ g.fillText(line, pad, y); y += 40; line = w; } else line = t; });
+      g.fillText(line, pad, y); }
     y += 60;
     g.fillStyle = '#55615A'; g.font = '800 22px '+B; g.fillText('HOW SURE THEY FELT', pad, y); y += 6;
     [['Sure & right', a.cs.sureOk, '#16843F'], ['Sure but wrong', a.cs.sureWrong, '#C2341B'], ['Not sure', a.cs.unsure, '#9A5B00'], ['Don’t know yet', a.cs.dk, '#55615A']].forEach(([label, arr, col]) => {
@@ -467,20 +478,38 @@ textarea{font:inherit; font-size:14px; width:100%; min-height:160px; border:2px 
   let downloads = null;
   (async () => { try{ downloads = window.claude ? await window.claude.use('downloads') : null; }catch(e){ downloads = null; } })();
 
+  let pngBlob = null, pngURL = null, pngJob = null;
+  function preparePNG(){
+    pngBlob = null;
+    pngJob = resultPNG().then(b => {
+      pngBlob = b;
+      if(pngURL){ try{ URL.revokeObjectURL(pngURL); }catch(e){} }
+      pngURL = URL.createObjectURL(b); $('res-img').src = pngURL;
+      return b;
+    }).catch(() => null);
+    return pngJob;
+  }
+  const fileName = () => 'Fraction-check-' + (student.name.replace(/[^A-Za-z0-9]+/g,'-').replace(/^-|-$/g,'') || 'student') + '.png';
+
   $('dl-btn').addEventListener('click', async () => {
     const status = $('dl-status');
-    if(!downloads){ status.textContent = 'Download isn’t available here. Tap "Copy as text" and paste it into WhatsApp instead.'; return; }
-    status.textContent = 'Preparing your result…';
+    $('img-card').hidden = false;   // always offer the press-and-hold fallback
+    if(!downloads){ status.textContent = 'Press and hold the result image below to save it or share it on WhatsApp.'; return; }
+    const blob = pngBlob || await (pngJob || preparePNG());
+    if(!blob){ status.textContent = 'Couldn’t make the image here. Tap "Copy as text" and paste it into WhatsApp instead.'; return; }
+    status.textContent = 'Saving…';
+    let settled = false;
+    setTimeout(() => { if(!settled) status.textContent = 'If nothing happened, press and hold the result image below to save it or share it on WhatsApp.'; }, 4000);
     try{
-      const blob = await resultPNG();
-      const fname = 'Fraction-check-' + (student.name.replace(/[^A-Za-z0-9]+/g,'-').replace(/^-|-$/g,'') || 'student') + '.png';
-      await downloads.save({filename: fname, data: blob});
+      await downloads.save({filename: fileName(), data: blob});
+      settled = true;
       status.textContent = 'Saved! Now send the image to us on WhatsApp.';
     }catch(err){
+      settled = true;
       const code = err && err.code;
-      status.textContent = code === 'declined' ? 'Download cancelled. Tap "Download result" when you’re ready.'
+      status.textContent = code === 'declined' ? 'Download cancelled. You can also press and hold the image below to save it.'
         : code === 'rate_limited' ? 'Please wait a moment and try again.'
-        : 'Download didn’t work here. Tap "Copy as text" and paste it into WhatsApp instead.';
+        : 'Download didn’t work on this phone. Press and hold the result image below to save it or share it on WhatsApp.';
     }
   });
 
